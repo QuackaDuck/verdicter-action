@@ -1,0 +1,24 @@
+{
+  "name": "verdicter-action",
+  "version": "1.0.0",
+  "description": "Run Verdicter policy scenarios in CI",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "ncc build src/index.ts --license licenses.txt",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src --ext .ts"
+  },
+  "dependencies": {
+    "@actions/core": "^1.11.1",
+    "js-yaml": "^4.1.0"
+  },
+  "overrides": {
+    "undici": "^7.0.0"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^20.0.0",
+    "@vercel/ncc": "^0.38.3",
+    "typescript": "^5.4.0"
+  }
+}

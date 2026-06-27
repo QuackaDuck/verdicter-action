@@ -1,0 +1,42 @@
+name: "Verdicter CI"
+description: "Run Verdicter policy scenarios in CI — catch policy regressions before they reach production."
+author: "Verdicter"
+
+branding:
+  icon: "shield"
+  color: "blue"
+
+inputs:
+  api-key:
+    description: "Your Verdicter API key. Store this as a repository secret."
+    required: true
+  config:
+    description: "Path to the scenario config file, relative to the repository root."
+    required: false
+    default: ".verdicter/ci.yml"
+  api-url:
+    description: "Verdicter API base URL. Override for self-hosted deployments."
+    required: false
+    default: "https://verdicter.dev"
+  fail-on-unexpected:
+    description: "Fail the workflow step if any scenario produces an unexpected decision."
+    required: false
+    default: "true"
+  post-comment:
+    description: "Post a summary comment on the pull request."
+    required: false
+    default: "true"
+
+outputs:
+  total:
+    description: "Total number of steps evaluated."
+  passed:
+    description: "Number of steps that matched the expected decision."
+  failed:
+    description: "Number of steps that did not match the expected decision."
+  result:
+    description: "Overall result: 'pass' or 'fail'."
+
+runs:
+  using: "node20"
+  main: "dist/index.js"

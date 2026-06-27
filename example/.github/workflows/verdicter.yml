@@ -1,0 +1,19 @@
+name: Verdicter policy check
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  policy-check:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write   # required to post the PR comment
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run Verdicter scenarios
+        uses: verdicter-dev/verdicter-action@v1
+        with:
+          api-key: ${{ secrets.VERDICTER_API_KEY }}
