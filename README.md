@@ -66,7 +66,7 @@ jobs:
 |---|---|---|---|
 | `api-key` | Yes | - | Your Verdicter API key |
 | `config` | No | `.verdicter/ci.yml` | Path to the scenario config file |
-| `api-url` | No | `https://verdicter.dev` | Override for self-hosted deployments |
+| `api-url` | No | `https://www.verdicter.dev` | Verdicter API base URL |
 | `fail-on-unexpected` | No | `true` | Fail the workflow if any step produces an unexpected decision |
 | `post-comment` | No | `true` | Post a summary comment on the pull request |
 
