@@ -26,6 +26,10 @@ inputs:
     description: "Post a summary comment on the pull request."
     required: false
     default: "true"
+  github-token:
+    description: "GitHub token for posting PR comments. Defaults to the built-in GITHUB_TOKEN."
+    required: false
+    default: ${{ github.token }}
 
 outputs:
   total:

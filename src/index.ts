@@ -279,13 +279,16 @@ async function run(): Promise<void> {
   await writeJobSummary(scenarioResults, totalPassed, totalFailed, totalSteps);
 
   // PR comment
-  if (shouldComment && process.env.GITHUB_TOKEN) {
+  const githubToken = core.getInput("github-token") || process.env.GITHUB_TOKEN;
+  if (shouldComment && githubToken) {
     try {
       const comment = buildComment(scenarioResults, totalPassed, totalFailed, totalSteps);
-      await postPRComment(process.env.GITHUB_TOKEN, comment);
+      await postPRComment(githubToken, comment);
     } catch (err) {
       core.warning(`Could not post PR comment: ${err}`);
     }
+  } else if (shouldComment) {
+    core.info("Skipping PR comment - no GitHub token available.");
   }
 
   // Final result
