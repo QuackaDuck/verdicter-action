@@ -15,7 +15,7 @@ inputs:
     required: false
     default: ".verdicter/ci.yml"
   api-url:
-    description: "Verdicter API base URL. Override for self-hosted deployments."
+    description: "Verdicter API base URL."
     required: false
     default: "https://www.verdicter.dev"
   fail-on-unexpected:

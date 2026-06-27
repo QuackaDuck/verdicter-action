@@ -2,8 +2,8 @@
 # Place this file at .verdicter/ci.yml in your repository root.
 # Docs: https://verdicter.dev/docs/ci
 
-# Optional: override the API URL for self-hosted deployments
-# api_url: https://verdicter.dev
+# Optional: override the API URL
+# api_url: https://www.verdicter.dev
 
 scenarios:
   - name: "Support bot - read operations should pass"
