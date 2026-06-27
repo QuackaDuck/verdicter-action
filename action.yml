@@ -17,7 +17,7 @@ inputs:
   api-url:
     description: "Verdicter API base URL. Override for self-hosted deployments."
     required: false
-    default: "https://verdicter.dev"
+    default: "https://www.verdicter.dev"
   fail-on-unexpected:
     description: "Fail the workflow step if any scenario produces an unexpected decision."
     required: false
